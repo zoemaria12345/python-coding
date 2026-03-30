@@ -24,7 +24,7 @@ class TextFileManager:
 
     def create_file(self):
             filename = input("Enter new file name: ")
-            if not os.path.exists(filename):
+            if os.path.exists(filename):
                 print("File already exist.")
                 return
             text = input("Enter text to write: ")
@@ -57,7 +57,7 @@ class TextFileManager:
             self.display_menu()
             choice = input("Select an option(1-5):")
             if choice == "1":
-                  self.open_file
+                 self.open_file()
             elif choice == "2":
                  self.create_file()
             elif choice == "3":
@@ -65,7 +65,7 @@ class TextFileManager:
             elif choice == "4":
                  self.append_file()
             elif choice == "5":
-                 self.running_file()
+                 self.running = False
                  print("Exiting system.")
             else:
                  print("Invalid selection.")
